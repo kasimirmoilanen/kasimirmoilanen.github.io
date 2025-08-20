@@ -1,5 +1,5 @@
 body {
-	background-color: #93a1a1 ;
+	background-color: grey;
 	font-size: 24px;	
    	width: 100vw;
   	overflow-y: overlay;
@@ -54,7 +54,7 @@ footer {
 }
 .main {
   flex: 100%;
-  background-color: #fdf6e3 ;
+  background-color: lightgrey;
   padding: 20px;
 	height: 100%;
 	color: black;
@@ -63,7 +63,7 @@ footer {
   position: fixed;
   left: 0;
   bottom: 0;
-  background-color: #fdf6e3 ;
+  background-color: lightgrey;
   border: solid black 1px;
   width: 100%;
   text-align: center;
