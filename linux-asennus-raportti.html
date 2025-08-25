@@ -10,7 +10,7 @@
 </header>
 <div class="row">
 	<div class="main">
-
+<pre>
 Debianin asennus virtuaalikoneeseen
 Raportti
 
@@ -159,15 +159,15 @@ Vielä yksi asia. Tahtoisin esitellä lempi Linux-ohjelmani mutta apt-get -komen
 Tämän ongelman syy on ilmeisesti, niin kuin artikkelissa https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-20082025.md lopussa kerrotaan, sources.list -tiedoston vajavaisuudessa. Kävin lisäämässä sinne tarvittavat tiedot:
 sudo vi /etc/apt/sources.list
 (Kuva)
-
+ja lisätään seuraavat tiedot:
+(Kuva)
+Noniin. Ajettiin komennot
+sudo apt-get update && sudo apt-get upgrade
+ja toimi.
+</pre>
 
 
 	</div>
 </div>
 </body>
 </html>
-ja lisätään seuraavat tiedot:
-(Kuva)
-Noniin. Ajettiin komennot
-sudo apt-get update && sudo apt-get upgrade
-ja toimi.
