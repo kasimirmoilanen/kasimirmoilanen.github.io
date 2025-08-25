@@ -6,10 +6,10 @@ body {
    	overflow-x: hidden;
 }
 header {
-	text-align: center;
+	text-align: left;
 }
 ul, li {
-	text-align: center;
+	text-align: left;
 	list-style: none;
 	display: table;
 	margin: 0 auto;
@@ -32,19 +32,16 @@ a:hover {
 p {
 	font-family: monospace;
 	color: black;
-	text-align: center;
-}
-#poem {
 	text-align: left;
 }
 footer {
-	text-align: center;
+	text-align: left;
 }
 
 /*flex-box stuff here*/
 
 .row {
-	text-align: center;
+	text-align: left;
 	align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -66,5 +63,5 @@ footer {
   background-color: lightgrey;
   border: solid black 1px;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
