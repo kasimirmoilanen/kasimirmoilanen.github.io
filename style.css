@@ -37,6 +37,11 @@ p {
 footer {
 	text-align: left;
 }
+#code {
+	color: green;
+	background-color: black;
+}
+
 
 /*flex-box stuff here*/
 
