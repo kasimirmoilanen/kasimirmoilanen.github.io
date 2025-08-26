@@ -52,7 +52,7 @@ RAM: 8GB<br>
 Virtualbox versio 7.2.0r170228<br>
 Levykuva: debian-live-13.0.0-amd64-xfce.iso
 </p>
-<p> Ensimmäinen ongelma</p>
+<h6> Ensimmäinen ongelma</h6>
 <p>Tarkistaessani Virtualboxin versiota komennolla:</p>
 <p class="code">vboxmanage --version</p>
 <p>sain varoituksen joka ilmoitti ettei kernel-moduulia ole ladattuna, eikä virtuaalikoneita voida ajaa ilman sitä:</p>
@@ -130,7 +130,7 @@ jossa käyttäjä colorpurple21859 kysyy ja ehdottaa:</p>
 <p>Asiasta kukkaruukkuun, mitään varmuutta ei ollut siitä että tämä korjaisi ongelmani Virtualboxin kernel-moduulin kanssa.</p>
 <p>Olin kuitenkin päätellyt oikein, nimittäin avasin heti Virtualboxin ja käynnistin virtuaalikoneen onnistuneesti!</p>
 <p>Oli tullut aika asentaa Debian.</p>
-
+<h6>Itse Debianin asennus</h6>
 <p>Hieman käytin ohjenuorana opettajan ohjetta osoitteessa https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-20082025.md</p>
 <p>Kello oli 23:39</p>
 <p>Painoin "New" Virtualboxin graafisesta käyttöliittymästä.</p>
@@ -176,6 +176,7 @@ jossa käyttäjä colorpurple21859 kysyy ja ehdottaa:</p>
 <img src="Images/2025-08-26-001819_1366x768_scrot.png"></img><br>
 <p>Kone boottasi ja sisäänkirjautuminen onnistui! Jee!</p>
 <img src="Images/2025-08-26-002641_1366x768_scrot.png"></img><br>
+<h6>sources.list ja Lempi Linux-ohjelmani</h6>
 <p>Vielä yksi asia. Esittelisin lempi Linux-ohjelmani mutta apt-get -komento ei toiminut:</p>
 <img src="Images/2025-08-26-003004_1366x768_scrot.png"></img><br>
 <p>Tämän ongelman syy oli ilmeisesti, niin kuin artikkelissa https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-20082025.md lopussa kerrotaan, sources.list -tiedoston vajavaisuudessa. Kävin lisäämässä sinne tarvittavat tiedot:</p>
