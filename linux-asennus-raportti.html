@@ -26,27 +26,26 @@ RAM: 8GB<br>
 
 Virtualbox versio 7.2.0r170228<br>
 </p>
-- Ensimmäinen ongelma
-Tarkistaessani Virtualboxin versiota komennolla:
-vboxmanage --version
-sain varoituksen joka ilmoitti ettei kernel-moduulia ole ladattuna, eikä virtuaalikoneita voida ajaa ilman sitä:
-(Kuva)
-Tarkistin asian Virtualboxin graafisesta liittymästä ja sain samantyylisen varoituksen yrittämällä käynnistää virtuaalikoneen:
-(Kuva)
+<p> Ensimmäinen ongelma</p>
+<p>Tarkistaessani Virtualboxin versiota komennolla:</p>
+<p class="code">vboxmanage --version</p>
+<p>sain varoituksen joka ilmoitti ettei kernel-moduulia ole ladattuna, eikä virtuaalikoneita voida ajaa ilman sitä:</p>
+(Kuva)<br>
+<p>Tarkistin asian Virtualboxin graafisesta liittymästä ja sain samantyylisen varoituksen yrittämällä käynnistää virtuaalikoneen:</p>
+(Kuva)<br>
 
-Yritin tehdä neuvotulla tavalla ja compilata kernel-moduulin komennolla:
-sudo /sbin/vboxconfig
-mutta komentoa ei löytynyt
-(Kuva)
-ajoin vielä komennon ilman sudoa:
-(Kuva)
-jonka vastauksena sain ettei kyseistä tiedostoa tai hakemistoa ole olemassa.
+<p>Yritin tehdä neuvotulla tavalla ja compilata kernel-moduulin komennolla:</p>
+<p class="code">sudo /sbin/vboxconfig</p>
+<p>mutta komentoa ei löytynyt</p>
+(Kuva)<br>
+<p>ajoin vielä komennon ilman sudoa:</p>
+(Kuva)<br>
+<p>jonka vastauksena sain ettei kyseistä tiedostoa tai hakemistoa ole olemassa.</p>
 
-Googlasin:
-sudo: /sbin/vboxconfig: command not found
+<p>Googlasin "sudo: /sbin/vboxconfig: command not found"
 ja osoitteessa https://bbs.archlinux.org/viewtopic.php?id=278180
-käyttäjä Skunktrader on kysynyt samankaltaiseen ongelmaan törmänneeltä käyttäjältä:
-"Have you rebooted since upgrading the kernel?
+käyttäjä Skunktrader on kysynyt samankaltaiseen ongelmaan törmänneeltä käyttäjältä:</p>
+<p>"Have you rebooted since upgrading the kernel?</p>
 Tämä oli mahdollinen syy ongelmaan joten käynnistin tietokoneen uudelleen noin kello 22:00 mutta ongelmaan ei tullut muutosta.
 Kävin katsomassa https://wiki.archlinux.org/title/VirtualBox
 ja artikkelin alussa mainitaan Install the core packages. Minulla oli virtualbox-host-dkms asennettuna ja arvelin että ehkä vika voisi olla tässä, nimittäin minulla oli ymmärtääkseni tavallinen linux-kernel käytössä eikä esim. linux-zen jota tämän paketin kanssa käytetään.
