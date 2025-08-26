@@ -51,7 +51,7 @@ käyttäjä Skunktrader on kysynyt samankaltaiseen ongelmaan törmänneeltä kä
 ja artikkelin alussa mainitaan Install the core packages. Minulla oli virtualbox-host-dkms asennettuna ja arvelin että ehkä vika voisi olla tässä, nimittäin minulla oli ymmärtääkseni tavallinen linux-kernel käytössä eikä esim. linux-zen jota tämän dkms-paketin kanssa käytetään.</p>
 <p>Pidin pienen pohtimistauon kello 22:18 samalla kun päivitin järjestelmäni komennolla:</p>
 <p class="code">sudo pacman -Syu</p>
-<p>Pohdin, että voisin kenties vaihtaa kerneliä linux-zeniin ja katsoa mitä tapahtuu. Tekemällä tämän voisin myös saada uutta innostusta tekemiseeni, nimittäin kernelin vaihtamista en ole tehnyt aikoihin ja se voikin olla sitten kivaa puuhaa. :)</p>
+<p>Pohdin, että voisin kenties vaihtaa kerneliä linux-zeniin joka minulla on valmiiksi asennettuna ja katsoa mitä tapahtuu. Tekemällä tämän voisin myös saada uutta innostusta tekemiseeni, nimittäin kernelin vaihtamista en ole tehnyt aikoihin ja se voikin olla sitten kivaa puuhaa. :)</p>
 <p>Huomasin järjestelmäpäivitykseni lokissa kohdan joka viittasi siihen että olisin mahdollisesti oikeilla jäljillä ongelmassa, ainakin näin päättelin päässäni.</p>
 (Kuva)<br>
 <p>Listasin saatavilla olevat kernelit komennolla:</p>
@@ -62,103 +62,104 @@ ja artikkelin alussa mainitaan Install the core packages. Minulla oli virtualbox
 <p>uname -r</p>
 (Kuva)<br>
 
-Käynnistäessäni koneen uudelleen vaihtaakseni kernelin, linux-zen kerneliä ei ollut listattuna GRUBissa. Lähdin selvittämään mistä on kyse.
-https://www.reddit.com/r/archlinux/comments/rn43y0/arch_seems_stuck_at_boot/?utm_medium=android_app&utm_source=share
-Käyttäjä hearthreddit kysyy hieman erilaiseen ongelmaan mutta samantyyppiseen törmänneeltä:
-Did you regenerate your grub config?
-Yritin siis ehdotettua komentoa:
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-Mutta komentoa ei löytynyt sudona eikä peruskäyttäjänä.
-Löysin vastauksen sivulta https://bobcares.com/blog/grub-mkconfig-command-not-found/
-josta selvisi että saan komennon asentamalla grub-paketin.
-Ajoin siis komennon:
-pacman -S grub
-ja seuraava ongelma johon törmäsin ajaessani komentoa:
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-olikin seuraavanlainen:
-(Kuva)
-/usr/bin/grub-mkconfig: line 270: /boot/grub/grub.cfg.new: No such file or directory
-Tein kyseisellä errorilla haun netissä ja sain seuraavan foorumipostauksen hakutuloksissa:
-https://www.linuxquestions.org/questions/arch-29/installation-problem-grub-config-error-no-such-file-or-directory-4175643477/
-jossa käyttäjä colorpurple21859 kysyy ja ehdottaa:
-does the directory /boot/grub exist? If not create the /boot/grub directory.
-Loin siis uuden hakemiston komennolla:
-sudo mkdir /boot/grub
-joka vaikutti toimineen onnistuneesti.
-(Kuva)
-Käynnistin siis koneeni uudelleen jospa sieltä olisi löytynyt GRUBista linux-zen mutta eipä näkynyt.
-Pohdiskelin että tämä johtui mahdollisesti siitä, ettei GRUB käytä sitä config-tiedostoa jonka olin generoinut grub-mkconfig -komennolla. Loin aikaisemmin uuden hakemiston /boot/grub/ ja sinne config-tiedoston grub.cfg, mutta mahdollisesti järjestelmä oli konfiguroitu käyttämään jossakin toisessa sijainnissa olevaa konfigurointi-tiedostoa. Näin siis päättelin ilman varmuutta asiasta.
-Lähdin sitten seikkailemaan hakemistoon /boot ja pienen tutkinnan jälkeen huomasin että hakemiston /boot/loader/entries/ sisällä näyttäisi olevan ne vaihtoehdot jotka näen GRUBissa. Linux-zeniä ei siellä näkynyt.
-Löysin netistä uuden artikkelin jossa luotiin uusi tiedosto tähän hakemistoon ja otin siitä hieman mallia:
-https://dev.to/thekbbohara/how-to-change-update-the-kernel-linux-systemd-boot-baby-2hn9
-Loin uuden tiedoston hakemistoon /boot/loader/entries/ kopioimalla toisen hakemistossa olevan tiedoston testiksi komennolla:
-sudo cp 2023-07-29_14-12-05_linux.conf linux-zen.conf
-Tarkastelin tiedostoa ja sen sisältöä ja vertasin sitä /boot -hakemiston sisältöön:
-(Kuva)
-Vaikka aikaisemmassa artikkelissa oli tarkat ohjeet, pitää olla varovainen näitä tiedostoja muokatessa ettei vahingossa riko jotain. :-)
-Vaikutti siltä, että mikään ei menisi rikki jos muuttaisin tämän uuden linux-zen.conf -tiedoston sisältöä seuraavalla tavalla:
-(Kuva)
-Käytännössä lisäsin vain -zen -päätteet tiettyihin kohtiin linux-zen.conf -tiedostossa.
-Ajattelin että nyt voitaisiin rebootata kone uudestaan jos GRUBissa näkyisi muutoksia. Kello oli 23:28:00.
-Jipii! Linux-zen -kernel näkyi vaihtoehdoissa ja se boottasi ilman ongelmia.
-Asiasta kukkaruukkuun, mitään varmuutta ei ollut siitä että tämä korjaisi ongelmani Virtualboxin kernel-moduulin kanssa.
-Olin kuitenkin päätellyt oikein, nimittäin avasin heti Virtualboxin ja käynnistin virtuaalikoneen onnistuneesti!
-On tullut aika asentaa Debian, huisia.
+<p>Käynnistäessäni koneen uudelleen vaihtaakseni kernelin, linux-zen kerneliä ei ollut listattuna GRUBissa. Lähdin selvittämään mistä on kyse.</p>
+<p>https://www.reddit.com/r/archlinux/comments/rn43y0/arch_seems_stuck_at_boot/?utm_medium=android_app&utm_source=share
+Käyttäjä hearthreddit kysyy hieman erilaiseen ongelmaan törmänneeltä:</p>
+<p>Did you regenerate your grub config?</p>
+<p>Vaikka henkilön ongelma olikin erilainen, kokeilin tätä ehdotettua komentoa:</p>
+<p class="code">sudo grub-mkconfig -o /boot/grub/grub.cfg</p>
+<p>Mutta komentoa ei löytynyt</p>
+<p>Löysin vastauksen sivulta https://bobcares.com/blog/grub-mkconfig-command-not-found/
+josta selvisi että saan komennon asentamalla grub-paketin.</p>
+<p>Ajoin siis komennon:</p>
+<p class="code">pacman -S grub</p>
+<p>ja seuraava ongelma johon törmäsin ajaessani komentoa:</p>
+<p class="code">sudo grub-mkconfig -o /boot/grub/grub.cfg</p>
+<p>olikin seuraavanlainen:</p>
+(Kuva)<br>
+<p class="code">/usr/bin/grub-mkconfig: line 270: /boot/grub/grub.cfg.new: No such file or directory</p>
+<p>Tein kyseisellä errorilla haun netissä ja sain seuraavan foorumipostauksen hakutuloksissa:</p>
+<p>https://www.linuxquestions.org/questions/arch-29/installation-problem-grub-config-error-no-such-file-or-directory-4175643477/
+jossa käyttäjä colorpurple21859 kysyy ja ehdottaa:</p>
+<p>does the directory /boot/grub exist? If not create the /boot/grub directory.</p>
+<p>Loin siis uuden hakemiston komennolla:</p>
+<p class="code">sudo mkdir /boot/grub</p>
+<p>joka vaikutti toimineen onnistuneesti.</p>
+(Kuva)<br>
+		
+<p>Käynnistin siis koneeni uudelleen jospa sieltä olisi löytynyt GRUBista linux-zen mutta eipä näkynyt.</p>
+<p>Pohdiskelin että tämä johtui mahdollisesti siitä, ettei GRUB käytä sitä config-tiedostoa jonka olin generoinut grub-mkconfig -komennolla. Loin aikaisemmin uuden hakemiston /boot/grub/ ja sinne config-tiedoston grub.cfg, mutta mahdollisesti järjestelmä oli konfiguroitu käyttämään jossakin toisessa sijainnissa olevaa konfigurointi-tiedostoa. Näin siis päättelin ilman varmuutta asiasta.</p>
+<p>Lähdin sitten seikkailemaan hakemistoon /boot ja pienen tutkinnan jälkeen huomasin että hakemiston /boot/loader/entries/ sisällä näyttäisi olevan ne vaihtoehdot jotka näen GRUBissa. Linux-zeniä ei siellä näkynyt.</p>
+<p>Löysin netistä uuden artikkelin jossa luotiin uusi tiedosto tähän hakemistoon ja otin siitä hieman mallia:</p>
+<p>https://dev.to/thekbbohara/how-to-change-update-the-kernel-linux-systemd-boot-baby-2hn9</p>
+<p>Loin uuden tiedoston hakemistoon /boot/loader/entries/ kopioimalla toisen hakemistossa olevan tiedoston testiksi komennolla:</p>
+<p class="code">sudo cp 2023-07-29_14-12-05_linux.conf linux-zen.conf</p>
+<p>Tarkastelin tiedostoa ja sen sisältöä ja vertasin sitä /boot -hakemiston sisältöön:</p>
+(Kuva)<br>
+<p>Vaikka aikaisemmassa artikkelissa oli tarkat ohjeet, ajattelin että pitäisi olla varovainen näitä tiedostoja muokatessa ettei vahingossa rikkoisi jotain. :-)</p>
+<p>Vaikutti siltä, että mikään ei menisi rikki jos muuttaisin tämän uuden linux-zen.conf -tiedoston sisältöä seuraavalla tavalla:</p>
+(Kuva)<br>
+<p>Käytännössä lisäsin vain -zen -päätteet tiettyihin kohtiin linux-zen.conf -tiedostossa.</p>
+<p>Ajattelin että nyt voitaisiin rebootata kone uudestaan jos GRUBissa näkyisi muutoksia. Kello oli 23:28:00.</p>
+<p>Jipii! Linux-zen -kernel näkyi vaihtoehdoissa ja se boottasi ilman ongelmia.</p>
+<p>Asiasta kukkaruukkuun, mitään varmuutta ei ollut siitä että tämä korjaisi ongelmani Virtualboxin kernel-moduulin kanssa.</p>
+<p>Olin kuitenkin päätellyt oikein, nimittäin avasin heti Virtualboxin ja käynnistin virtuaalikoneen onnistuneesti!</p>
+<p>Oli tullut aika asentaa Debian.</p>
 Hieman käytin ohjenuorana opettajan ohjetta osoitteessa https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-20082025.md
-Kello on 23:39
+Kello oli 23:39
 Painoin "New" Virtualboxin graafisesta käyttöliittymästä.
-(Kuva)
+(Kuva)<br>
 Nimesin Virtuaalikoneen nimellä "Debian" ja valitsin tunnilla lataamani Debian levykuvan ISO Image-kohtaan.
 Tässä vaiheessa mietin, pitäisikö käyttää "Proceed with unattended installation" ja jätin sen pois.
-(Kuva)
+(Kuva)<br>
 Säädin RAM-muistin kahteen gigaan ja CPU yhteen kappaleeseen.
-(Kuva)
+(Kuva)<br>
 Säädin virtuaalisen kovalevyn koon 20 Gigaan ja painoin "Finish".
-(Kuva)
+(Kuva)<br>
 Käynnistin virtuaalikoneen ja menin suoraan kohtaan "Start installer", sillä olin tehokkaalla tuulella kaiken tuon kernelihärdellin jäljiltä.
-(Kuva)
+(Kuva)<br>
 Valitsin kieleksi englannin.
-(Kuva)
+(Kuva)<br>
 Valitsin sijainniksi Other->Europe->Finland
-(Kuva)
+(Kuva)<br>
 Valitsin localeksi en-US.UTF-8
-(Kuva)
+(Kuva)<br>
 Näppäimistön kieleksi valitsin Finnish
-(Kuva)
+(Kuva)<br>
 Sitten odottelin ja laitoin hostnameksi debian
-(Kuva)
+(Kuva)<br>
 Verkon domain-nimeksi example.com
-(Kuva)
+(Kuva)<br>
 Jätin root-salasanan konfiguroimatta.
-(Kuva)
+(Kuva)<br>
 Kirjoitin nimeni, käyttäjänimeni ja salasanani käyttäjää varten.
-(Kuva)
-(Kuva)
-(Kuva)
+(Kuva)<br>
+(Kuva)<br>
+(Kuva)<br>
 Odottelin ja valitsin Partition disks -kohdassa Guided - Use entire disk
-(Kuva)
+(Kuva)<br>
 Valitsin levyn jota käytetään ja laitoin siihen All files in one partition. Painoin varmistuksissa vielä kyllä kaikkeen että homma lähtisi pyörimään.
-(Kuva)
-(Kuva)
-(Kuva)
-(Kuva)
+(Kuva)<br>
+(Kuva)<br>
+(Kuva)<br>
+(Kuva)<br>
 Sitten odoteltiin.
-(Kuva)
+(Kuva)<br>
 Sain vielä ehdotuksen: Install the GRUB boot loader to your primary drive? Painoin kyllä, ei kai siinä muu auttanut vaikka päivän annos GRUBia tuli jo täyteen aikaisemmin tänään. :-)
-(Kuva)
+(Kuva)<br>
 Valitsin /dev/sda GRUBin sijainniksi.
-(Kuva)
+(Kuva)<br>
 Asennus valmis.
-(Kuva)
+(Kuva)<br>
 Kone boottaa ja sisäänkirjautuminen onnistuu!
-(Kuva)
+(Kuva)<br>
 Vielä yksi asia. Tahtoisin esitellä lempi Linux-ohjelmani mutta apt-get -komento ei toimi:
-(Kuva)
+(Kuva)<br>
 Tämän ongelman syy on ilmeisesti, niin kuin artikkelissa https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-20082025.md lopussa kerrotaan, sources.list -tiedoston vajavaisuudessa. Kävin lisäämässä sinne tarvittavat tiedot:
 sudo vi /etc/apt/sources.list
-(Kuva)
+(Kuva)<br>
 ja lisätään seuraavat tiedot:
-(Kuva)
+(Kuva)<br>
 Noniin. Ajettiin komennot
 sudo apt-get update && sudo apt-get upgrade
 ja toimi.
