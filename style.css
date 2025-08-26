@@ -37,6 +37,9 @@ p {
 footer {
 	text-align: left;
 }
+img {
+	width: 50%;
+}
 #code {
 	color: green;
 	background-color: black;
