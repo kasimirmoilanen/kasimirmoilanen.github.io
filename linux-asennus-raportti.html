@@ -153,15 +153,29 @@ jossa käyttäjä colorpurple21859 kysyy ja ehdottaa:</p>
 <img src="Images/2025-08-26-002641_1366x768_scrot.png"></img><br>
 <p>Vielä yksi asia. Tahtoisin esitellä lempi Linux-ohjelmani mutta apt-get -komento ei toimi:</p>
 <img src="Images/2025-08-26-003004_1366x768_scrot.png"></img><br>
-<p>Tämän ongelman syy on ilmeisesti, niin kuin artikkelissa https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-20082025.md lopussa kerrotaan, sources.list -tiedoston vajavaisuudessa. Kävin lisäämässä sinne tarvittavat tiedot:</p>
+<p>Tämän ongelman syy oli ilmeisesti, niin kuin artikkelissa https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-20082025.md lopussa kerrotaan, sources.list -tiedoston vajavaisuudessa. Kävin lisäämässä sinne tarvittavat tiedot:</p>
 <p class="code">sudo vi /etc/apt/sources.list</p>
-<p>ja lisätään seuraavat tiedot:</p>
+<p>ja lisättiin seuraavat tiedot:</p>
 <img src="Images/2025-08-26-003743_1366x768_scrot.png"></img><br>
 <p>Noniin. Ajettiin komennot:</p>
 <p class="code">sudo apt-get update && sudo apt-get upgrade</p>
-<p>ja toimi.</p>
-
-
+<p>ja toimi:</p>
+<img src="2025-08-26-004034_1366x768_scrot.png"></img><br>
+<p>Asensin pikaisesti lempiohjelmani, tmux:in (terminal multiplexerin) ja toisen hyödyllisen ohjelman, htop:in komennolla: </p>
+<p class="code">sudo apt install tmux htop</p>
+<img src="2025-08-26-004216_1366x768_scrot.png"></img>
+Käynnistettiin tmux komennolla tmux:
+<img src="2025-08-26-004241_1366x768_scrot.png"></img>
+<img src="2025-08-26-004246_1366x768_scrot.png"></img>
+<p>Jaettiin terminaali puoliksi painamalla ctrl+b ja %</p>
+<img src="2025-08-26-004255_1366x768_scrot.png"></img>
+<p>Sen jälkeen vielä toisessa suunnassa painamalla ctrl+b ja "</p>
+<img src="2025-08-26-004307_1366x768_scrot.png"></img>
+<p>Käynnistettiin vielä htop tässä uudessa paneelissa:</p>
+<img src="2025-08-26-004310_1366x768_scrot.png"></img>
+<p>htop näytti kamalan pieneltä tässä eikä paljon näkynyt. Painettiin siis ctrl+b ja z sekä suurennettiin terminaaliohjelma koko näytölle:</p>
+<img src="2025-08-26-004333_1366x768_scrot.png">
+<p>Valmista kello 00:43 :)</p>
 	</div>
 </div>
 </body>
