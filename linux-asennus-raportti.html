@@ -38,9 +38,9 @@ Levykuva: debian-live-13.0.0-amd64-xfce.iso
 <p>Yritin tehdä neuvotulla tavalla ja compilata kernel-moduulin komennolla:</p>
 <p class="code">sudo /sbin/vboxconfig</p>
 <p>mutta komentoa ei löytynyt</p>
-<img src="Images/"></img><br>
+<img src="Images/2025-08-25-215307_1366x768_scrot.png"></img><br>
 <p>ajoin vielä komennon ilman sudoa:</p>
-<img src="Images/"></img><br>
+<img src="Images/2025-08-25-215627_1366x768_scrot.png"></img><br>
 <p>jonka vastauksena sain ettei kyseistä tiedostoa tai hakemistoa ole olemassa.</p>
 
 <p>Googlasin "sudo: /sbin/vboxconfig: command not found"
@@ -54,14 +54,13 @@ ja artikkelin alussa mainitaan Install the core packages. Minulla oli virtualbox
 <p class="code">sudo pacman -Syu</p>
 <p>Pohdin, että voisin kenties vaihtaa kerneliä linux-zeniin joka minulla on valmiiksi asennettuna ja katsoa mitä tapahtuu. Tekemällä tämän voisin myös saada uutta innostusta tekemiseeni, nimittäin kernelin vaihtamista en ole tehnyt aikoihin ja se voikin olla sitten kivaa puuhaa. :)</p>
 <p>Huomasin järjestelmäpäivitykseni lokissa kohdan joka viittasi siihen että olisin mahdollisesti oikeilla jäljillä ongelmassa, ainakin näin päättelin päässäni.</p>
-<img src="Images/"></img><br>
+<img src="Images/2025-08-25-222952_1366x768_scrot.png"></img><br>
 <p>Listasin saatavilla olevat kernelit komennolla:</p>
 <p class="code">find /boot/vmli*</p>
-<img src="Images/"></img><br>
-<p>Linux ja Linux-zen kernelit olivat siis asennettuina.</p>
+<p>Linux ja Linux-zen kernelit olivat asennettuina.</p>
 <p>Tarkistin vielä nykyisen kernelin komennolla:</p>
 <p>uname -r</p>
-<img src="Images/"></img><br>
+<img src="Images/2025-08-25-223351_1366x768_scrot.png"></img><br>
 
 <p>Käynnistäessäni koneen uudelleen vaihtaakseni kernelin, linux-zen kerneliä ei ollut listattuna GRUBissa. Lähdin selvittämään mistä on kyse.</p>
 <p>https://www.reddit.com/r/archlinux/comments/rn43y0/arch_seems_stuck_at_boot/?utm_medium=android_app&utm_source=share
@@ -77,7 +76,7 @@ josta selvisi että saan komennon asentamalla grub-paketin.</p>
 <p>ja seuraava ongelma johon törmäsin ajaessani komentoa:</p>
 <p class="code">sudo grub-mkconfig -o /boot/grub/grub.cfg</p>
 <p>olikin seuraavanlainen:</p>
-<img src="Images/"></img><br>
+<img src="Images/2025-08-25-224957_1366x768_scrot.png"></img><br>
 <p class="code">/usr/bin/grub-mkconfig: line 270: /boot/grub/grub.cfg.new: No such file or directory</p>
 <p>Tein kyseisellä errorilla haun netissä ja sain seuraavan foorumipostauksen hakutuloksissa:</p>
 <p>https://www.linuxquestions.org/questions/arch-29/installation-problem-grub-config-error-no-such-file-or-directory-4175643477/
@@ -86,7 +85,7 @@ jossa käyttäjä colorpurple21859 kysyy ja ehdottaa:</p>
 <p>Loin siis uuden hakemiston komennolla:</p>
 <p class="code">sudo mkdir /boot/grub</p>
 <p>joka vaikutti toimineen onnistuneesti.</p>
-<img src="Images/"></img><br>
+<img src="Images/2025-08-25-225326_1366x768_scrot.png"></img><br>
 		
 <p>Käynnistin siis koneeni uudelleen jospa sieltä olisi löytynyt GRUBista linux-zen mutta eipä näkynyt.</p>
 <p>Pohdiskelin että tämä johtui mahdollisesti siitä, ettei GRUB käytä sitä config-tiedostoa jonka olin generoinut grub-mkconfig -komennolla. Loin aikaisemmin uuden hakemiston /boot/grub/ ja sinne config-tiedoston grub.cfg, mutta mahdollisesti järjestelmä oli konfiguroitu käyttämään jossakin toisessa sijainnissa olevaa konfigurointi-tiedostoa. Näin siis päättelin ilman varmuutta asiasta.</p>
@@ -96,10 +95,10 @@ jossa käyttäjä colorpurple21859 kysyy ja ehdottaa:</p>
 <p>Loin uuden tiedoston hakemistoon /boot/loader/entries/ kopioimalla toisen hakemistossa olevan tiedoston testiksi komennolla:</p>
 <p class="code">sudo cp 2023-07-29_14-12-05_linux.conf linux-zen.conf</p>
 <p>Tarkastelin tiedostoa ja sen sisältöä ja vertasin sitä /boot -hakemiston sisältöön:</p>
-<img src="Images/"></img><br>
+<img src="Images/2025-08-25-232127_1366x768_scrot.png"></img><br>
 <p>Vaikka aikaisemmassa artikkelissa oli tarkat ohjeet, ajattelin että pitäisi olla varovainen näitä tiedostoja muokatessa ettei vahingossa rikkoisi jotain. :-)</p>
 <p>Vaikutti siltä, että mikään ei menisi rikki jos muuttaisin tämän uuden linux-zen.conf -tiedoston sisältöä seuraavalla tavalla:</p>
-<img src="Images/"></img><br>
+<img src="Images/2025-08-25-232629_1366x768_scrot.png"></img><br>
 <p>Käytännössä lisäsin vain -zen -päätteet tiettyihin kohtiin linux-zen.conf -tiedostossa.</p>
 <p>Ajattelin että nyt voitaisiin rebootata kone uudestaan jos GRUBissa näkyisi muutoksia. Kello oli 23:28:00.</p>
 <p>Jipii! Linux-zen -kernel näkyi vaihtoehdoissa ja se boottasi ilman ongelmia.</p>
