@@ -46,21 +46,21 @@ Virtualbox versio 7.2.0r170228<br>
 ja osoitteessa https://bbs.archlinux.org/viewtopic.php?id=278180
 käyttäjä Skunktrader on kysynyt samankaltaiseen ongelmaan törmänneeltä käyttäjältä:</p>
 <p>"Have you rebooted since upgrading the kernel?</p>
-Tämä oli mahdollinen syy ongelmaan joten käynnistin tietokoneen uudelleen noin kello 22:00 mutta ongelmaan ei tullut muutosta.
-Kävin katsomassa https://wiki.archlinux.org/title/VirtualBox
-ja artikkelin alussa mainitaan Install the core packages. Minulla oli virtualbox-host-dkms asennettuna ja arvelin että ehkä vika voisi olla tässä, nimittäin minulla oli ymmärtääkseni tavallinen linux-kernel käytössä eikä esim. linux-zen jota tämän paketin kanssa käytetään.
-Pidin pienen pohtimistauon kello 22:18 samalla kun päivitin järjestelmäni komennolla:
-sudo pacman -Syu
-Pohdin, että voisin kenties vaihtaa kerneliä linux-zeniin ja katsoa mitä tapahtuu. Tekemällä tämän voisin myös saada uutta innostusta tekemiseeni, nimittäin kernelin vaihtamista en ole tehnyt aikoihin ja se voikin olla sitten kivaa puuhaa. :)
-Huomasin järjestelmäpäivitykseni lokissa kohdan joka viittasi siihen että olisin mahdollisesti oikeilla jäljillä ongelmassa, ainakin näin päättelin päässäni.
-(Kuva)
-Listasin saatavilla olevat kernelit komennolla:
-find /boot/vmli*
-(Kuva)
-Linux ja Linux-zen kernelit olivat siis asennettuina.
-Tarkistin vielä nykyisen kernelin komennolla:
-uname -r
-(Kuva)
+<p>Tämä oli mahdollinen syy ongelmaan joten käynnistin tietokoneen uudelleen noin kello 22:00 mutta ongelmaan ei tullut muutosta.</p>
+<p>Kävin katsomassa artikkelia osoitteessa https://wiki.archlinux.org/title/VirtualBox
+ja artikkelin alussa mainitaan Install the core packages. Minulla oli virtualbox-host-dkms asennettuna ja arvelin että ehkä vika voisi olla tässä, nimittäin minulla oli ymmärtääkseni tavallinen linux-kernel käytössä eikä esim. linux-zen jota tämän dkms-paketin kanssa käytetään.</p>
+<p>Pidin pienen pohtimistauon kello 22:18 samalla kun päivitin järjestelmäni komennolla:</p>
+<p class="code">sudo pacman -Syu</p>
+<p>Pohdin, että voisin kenties vaihtaa kerneliä linux-zeniin ja katsoa mitä tapahtuu. Tekemällä tämän voisin myös saada uutta innostusta tekemiseeni, nimittäin kernelin vaihtamista en ole tehnyt aikoihin ja se voikin olla sitten kivaa puuhaa. :)</p>
+<p>Huomasin järjestelmäpäivitykseni lokissa kohdan joka viittasi siihen että olisin mahdollisesti oikeilla jäljillä ongelmassa, ainakin näin päättelin päässäni.</p>
+(Kuva)<br>
+<p>Listasin saatavilla olevat kernelit komennolla:</p>
+<p class="code">find /boot/vmli*</p>
+(Kuva)<br>
+<p>Linux ja Linux-zen kernelit olivat siis asennettuina.</p>
+<p>Tarkistin vielä nykyisen kernelin komennolla:</p>
+<p>uname -r</p>
+(Kuva)<br>
 
 Käynnistäessäni koneen uudelleen vaihtaakseni kernelin, linux-zen kerneliä ei ollut listattuna GRUBissa. Lähdin selvittämään mistä on kyse.
 https://www.reddit.com/r/archlinux/comments/rn43y0/arch_seems_stuck_at_boot/?utm_medium=android_app&utm_source=share
