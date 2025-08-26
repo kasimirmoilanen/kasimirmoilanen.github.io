@@ -40,7 +40,7 @@ footer {
 img {
 	width: 100%;
 }
-#code {
+.code {
 	color: green;
 	background-color: black;
 }
