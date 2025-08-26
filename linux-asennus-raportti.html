@@ -105,64 +105,65 @@ jossa käyttäjä colorpurple21859 kysyy ja ehdottaa:</p>
 <p>Asiasta kukkaruukkuun, mitään varmuutta ei ollut siitä että tämä korjaisi ongelmani Virtualboxin kernel-moduulin kanssa.</p>
 <p>Olin kuitenkin päätellyt oikein, nimittäin avasin heti Virtualboxin ja käynnistin virtuaalikoneen onnistuneesti!</p>
 <p>Oli tullut aika asentaa Debian.</p>
-Hieman käytin ohjenuorana opettajan ohjetta osoitteessa https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-20082025.md
-Kello oli 23:39
-Painoin "New" Virtualboxin graafisesta käyttöliittymästä.
+
+<p>Hieman käytin ohjenuorana opettajan ohjetta osoitteessa https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-20082025.md</p>
+<p>Kello oli 23:39</p>
+<p>Painoin "New" Virtualboxin graafisesta käyttöliittymästä.</p>
 (Kuva)<br>
-Nimesin Virtuaalikoneen nimellä "Debian" ja valitsin tunnilla lataamani Debian levykuvan ISO Image-kohtaan.
-Tässä vaiheessa mietin, pitäisikö käyttää "Proceed with unattended installation" ja jätin sen pois.
+<p>Nimesin Virtuaalikoneen nimellä "Debian" ja valitsin tunnilla lataamani Debian levykuvan ISO Image-kohtaan.</p>
+<p>Tässä vaiheessa mietin, pitäisikö käyttää "Proceed with unattended installation" ja jätin sen pois.</p>
 (Kuva)<br>
-Säädin RAM-muistin kahteen gigaan ja CPU yhteen kappaleeseen.
+<p>Säädin RAM-muistin kahteen gigaan ja CPU yhteen kappaleeseen.</p>
 (Kuva)<br>
-Säädin virtuaalisen kovalevyn koon 20 Gigaan ja painoin "Finish".
+<p>Säädin virtuaalisen kovalevyn koon 20 Gigaan ja painoin "Finish".</p>
 (Kuva)<br>
-Käynnistin virtuaalikoneen ja menin suoraan kohtaan "Start installer", sillä olin tehokkaalla tuulella kaiken tuon kernelihärdellin jäljiltä.
+<p>Käynnistin virtuaalikoneen ja menin suoraan kohtaan "Start installer", sillä olin tehokkaalla tuulella kaiken tuon kernelihärdellin jäljiltä.</p>
 (Kuva)<br>
-Valitsin kieleksi englannin.
+<p>Valitsin kieleksi englannin.</p>
 (Kuva)<br>
-Valitsin sijainniksi Other->Europe->Finland
+<p>Valitsin sijainniksi Other->Europe->Finland</p>
 (Kuva)<br>
-Valitsin localeksi en-US.UTF-8
+<p>Valitsin localeksi en-US.UTF-8</p>
 (Kuva)<br>
-Näppäimistön kieleksi valitsin Finnish
+<p>Näppäimistön kieleksi valitsin Finnish</p>
 (Kuva)<br>
-Sitten odottelin ja laitoin hostnameksi debian
+<p>Sitten odottelin ja laitoin hostnameksi debian</p>
 (Kuva)<br>
-Verkon domain-nimeksi example.com
+<p>Verkon domain-nimeksi example.com</p>
 (Kuva)<br>
-Jätin root-salasanan konfiguroimatta.
+<p>Jätin root-salasanan konfiguroimatta.</p>
 (Kuva)<br>
-Kirjoitin nimeni, käyttäjänimeni ja salasanani käyttäjää varten.
-(Kuva)<br>
-(Kuva)<br>
-(Kuva)<br>
-Odottelin ja valitsin Partition disks -kohdassa Guided - Use entire disk
-(Kuva)<br>
-Valitsin levyn jota käytetään ja laitoin siihen All files in one partition. Painoin varmistuksissa vielä kyllä kaikkeen että homma lähtisi pyörimään.
+<p>Kirjoitin nimeni, käyttäjänimeni ja salasanani käyttäjää varten.</p>
 (Kuva)<br>
 (Kuva)<br>
 (Kuva)<br>
+<p>Odottelin ja valitsin Partition disks -kohdassa Guided - Use entire disk</p>
 (Kuva)<br>
-Sitten odoteltiin.
+<p>Valitsin levyn jota käytetään ja laitoin siihen All files in one partition. Painoin varmistuksissa vielä kyllä kaikkeen että homma lähtisi pyörimään.</p>
 (Kuva)<br>
-Sain vielä ehdotuksen: Install the GRUB boot loader to your primary drive? Painoin kyllä, ei kai siinä muu auttanut vaikka päivän annos GRUBia tuli jo täyteen aikaisemmin tänään. :-)
 (Kuva)<br>
-Valitsin /dev/sda GRUBin sijainniksi.
 (Kuva)<br>
-Asennus valmis.
 (Kuva)<br>
-Kone boottaa ja sisäänkirjautuminen onnistuu!
+<p>Sitten odoteltiin.</p>
 (Kuva)<br>
-Vielä yksi asia. Tahtoisin esitellä lempi Linux-ohjelmani mutta apt-get -komento ei toimi:
+<p>Sain vielä ehdotuksen: Install the GRUB boot loader to your primary drive? Painoin kyllä, ei kai siinä muu auttanut vaikka päivän annos GRUBia tuli jo täyteen aikaisemmin tänään. :-)</p>
 (Kuva)<br>
-Tämän ongelman syy on ilmeisesti, niin kuin artikkelissa https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-20082025.md lopussa kerrotaan, sources.list -tiedoston vajavaisuudessa. Kävin lisäämässä sinne tarvittavat tiedot:
-sudo vi /etc/apt/sources.list
+<p>Valitsin /dev/sda GRUBin sijainniksi.</p>
 (Kuva)<br>
-ja lisätään seuraavat tiedot:
+<p>Asennus valmis.</p>
 (Kuva)<br>
-Noniin. Ajettiin komennot
-sudo apt-get update && sudo apt-get upgrade
-ja toimi.
+<p>Kone boottaa ja sisäänkirjautuminen onnistuu!</p>
+(Kuva)<br>
+<p>Vielä yksi asia. Tahtoisin esitellä lempi Linux-ohjelmani mutta apt-get -komento ei toimi:</p>
+(Kuva)<br>
+<p>Tämän ongelman syy on ilmeisesti, niin kuin artikkelissa https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-20082025.md lopussa kerrotaan, sources.list -tiedoston vajavaisuudessa. Kävin lisäämässä sinne tarvittavat tiedot:</p>
+<p class="code">sudo vi /etc/apt/sources.list</p>
+(Kuva)<br>
+<p>ja lisätään seuraavat tiedot:</p>
+(Kuva)<br>
+<p>Noniin. Ajettiin komennot:</p>
+<p class="code">sudo apt-get update && sudo apt-get upgrade</p>
+<p>ja toimi.</p>
 
 
 	</div>
