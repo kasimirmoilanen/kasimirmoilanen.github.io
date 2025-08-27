@@ -27,10 +27,10 @@
 - ssh - etäyhteys toiseen koneeseen<br>
 </p>
 		
-<p>a) asennettiin micro -editori komennolla</p>
+<p>Asennettiin micro -editori komennolla</p>
 <p class="code">sudo apt install micro</p>
 <img src="../Images/"></img>
-<p>b) Asennettiin vielä kolme itselleni uutta/uudehkoa komentoriviohjelmaa komennolla:</p>
+<p>Asennettiin vielä kolme itselleni uutta/uudehkoa komentoriviohjelmaa komennolla:</p>
 <p class="code">sudo apt install fzf ncdu asciinema</p>
 <img src="../Images/"></img>
 <p>Testailin hieman näitä komentoja. Kivaa oli.</p>
@@ -39,11 +39,21 @@ c) FHS. Esittele kansiot, jotka on listattu "Command Line Basics Revisited" kapp
 		Näytä kuvaava esimerkki kunkin tärkeän kansion sisältämästä tiedostosta tai kansiosta. 
 		Jos kyseessä on tiedosto, näytä siitä kuvaava esimerkkirivi. 
 		Työskentele komentokehotteessa ja näytä komennot, joilla etsit esimerkit.
+<p>root-hakemistossa ( / ) sijaitsevat kaikki tiedostot. Sen alaisuudessa on esimerkiksi tärkeä /dev/ -hakemisto jossa laitteisiin liittyvät tiedostot sijaitsevat.</p>
+<p>home -hakemistossa ( /home/ ) sijaitsevat eri käyttäjien kotihakemistot.</p>
+<p>Esimerkiksi /home/kasimir/ -hakemistossa sijaitsee .config -hakemisto, jossa ovat käyttäjän konfigurointitiedostot.</p>
+<p>Hakemistossa /etc/ sijaitsevat järjestelmän laajuiset konfigurointitiedostot. Esimerkiksi /etc/vim/ -hakemistossa on vim-tekstieditoriin liittyviä konfigurointitiedostoja.</p>
+<p>/media/ -hakemistossa tulee tiedostoja näkyviin jos koneeseen liitetään vaikkapa muistitikku (tämä tosin riippuu siitä miten järjestelmä on konfiguroitu.)</p>
+<p>/var/log/ -hakemistossa on lokitiedostoja. Sieltä voi tutkia tietoa jos tulee ongelmia </p>
 
-d) The Friendly M. Näytä 2-3 kuvaavaa esimerkkiä grep-komennon käytöstä. Ohjeita löytyy 'man grep' ja tietysti verkosta.
+		d) The Friendly M. Näytä 2-3 kuvaavaa esimerkkiä grep-komennon käytöstä. Ohjeita löytyy 'man grep' ja tietysti verkosta.
 e) Pipe. Näytä esimerkki putkista (pipes, "|").
 f) Rauta. Listaa testaamasi koneen rauta (‘sudo lshw -short -sanitize’). Asenna lshw tarvittaessa. Selitä ja analysoi listaus.
 
+
+<p>Lähteet:</p>
+<p>https://terokarvinen.com/2020/command-line-basics-revisited/</p>
+<p>https://www.golinuxcloud.com/grep-command-in-linux/</p>
 	</div>
 </div>
 </body>
