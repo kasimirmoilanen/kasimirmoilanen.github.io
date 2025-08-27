@@ -26,7 +26,7 @@
 - mv - siirtää tiedoston<br>
 - ssh - etäyhteys toiseen koneeseen<br>
 </p>
-		
+<h1>apt -testailua</h1>		
 <p>Asennettiin micro -editori komennolla</p>
 <p class="code">sudo apt install micro</p>
 <img src="../Images/"></img>
@@ -35,10 +35,7 @@
 <img src="../Images/"></img>
 <p>Testailin hieman näitä komentoja. Kivaa oli.</p>
 <img src="../Images/"></img>
-c) FHS. Esittele kansiot, jotka on listattu "Command Line Basics Revisited" kappaleessa "Important directories". 
-		Näytä kuvaava esimerkki kunkin tärkeän kansion sisältämästä tiedostosta tai kansiosta. 
-		Jos kyseessä on tiedosto, näytä siitä kuvaava esimerkkirivi. 
-		Työskentele komentokehotteessa ja näytä komennot, joilla etsit esimerkit.
+<h1>Hakemistojen esittelyä</h1>
 <p>root-hakemistossa ( / ) sijaitsevat kaikki tiedostot. Sen alaisuudessa on esimerkiksi tärkeä /dev/ -hakemisto jossa laitteisiin liittyvät tiedostot sijaitsevat.</p>
 <p>home -hakemistossa ( /home/ ) sijaitsevat eri käyttäjien kotihakemistot.</p>
 <p>Esimerkiksi /home/kasimir/ -hakemistossa sijaitsee .config -hakemisto, jossa ovat käyttäjän konfigurointitiedostot.</p>
@@ -46,9 +43,18 @@ c) FHS. Esittele kansiot, jotka on listattu "Command Line Basics Revisited" kapp
 <p>/media/ -hakemistossa tulee tiedostoja näkyviin jos koneeseen liitetään vaikkapa muistitikku (tämä tosin riippuu siitä miten järjestelmä on konfiguroitu.)</p>
 <p>/var/log/ -hakemistossa on lokitiedostoja. Sieltä voi tutkia tietoa jos tulee ongelmia </p>
 
-		d) The Friendly M. Näytä 2-3 kuvaavaa esimerkkiä grep-komennon käytöstä. Ohjeita löytyy 'man grep' ja tietysti verkosta.
-e) Pipe. Näytä esimerkki putkista (pipes, "|").
-f) Rauta. Listaa testaamasi koneen rauta (‘sudo lshw -short -sanitize’). Asenna lshw tarvittaessa. Selitä ja analysoi listaus.
+<h1>grep</h1>
+<p>grepillä voi etsiä useammasta tiedostosta yhdellä kertaa tietoa:</p>
+<p class="code">grep findme 1 2 3</p>
+<img src="../Images/"></img>
+<p>grepille voi syöttää myös haettavan asian tiedostosta. Tässä esimerkissä tiedostossa 0 on etsittävä asia, kun taas tiedostosta 1 etsitään:</p>
+<p class="code">grep -f 0 1</p>
+<img src="../Images/"></img>
+<h1>Esimerkki putkista</h1>
+<p class="code">cowsay "vähän väriä elämään!" | lolcat</p>
+<img src="../Images/"></img>
+<h1>Raudan analysointia</h1>
+<img src="../Images/"></img>
 
 
 <p>Lähteet:</p>
