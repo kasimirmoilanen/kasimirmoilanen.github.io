@@ -11,6 +11,7 @@
 <div class="row">
 	<div class="main">
 	<h1>h3</h1>
+	<p>x)</p>
 	<p>- Apachella voidaan hostata useampaa nettisivua samasta IP-osoitteesta eri domain-nimillä.</p>
 	<p>- On lisättävä VirtualHost httpd.conf -konfiguraatiotiedostoon:</p>
 	<p class="code">
@@ -20,8 +21,16 @@
     DocumentRoot "/www/domain"<br>
 	&lt;/VirtualHost&gt;
 	</p>
-
-
+	<p>a)</p>
+	<p>Testasin curl-komennolla että palvelin vastaa localhost -osoitteesta:
+	<p class="code">curl localhost<br>
+					Hello!</p>
+	<p>b)</p>
+	<p>Avasin apachen lokitiedoston komennolla </p>
+	<p class="code">sudo cat /var/log/apache/access.log<br>
+	::1 - - [09/Sep/2025:14:22:27 +0300] "GET / HTTP/1.1" 200 232 "-" "curl/8.14.1"
+	</p>
+		
 	<p>Lähteet:</p>
 
 <p>Karvinen, Tero 2018: Name Based Virtual Hosts on Apache – Multiple Websites to Single IP Address Linkki: https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/</p>
