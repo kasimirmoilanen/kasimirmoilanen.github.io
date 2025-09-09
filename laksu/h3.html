@@ -14,8 +14,7 @@
 	<p>- Apachella voidaan hostata useampaa nettisivua samasta IP-osoitteesta eri domain-nimillä.</p>
 	<p>- Ensimmäisenä on lisättävä VirtualHost konfiguraatiotiedostoon:</p>
 	<pre>
-	<VirtualHost *:80>
-    # This first-listed virtual host is also the default for *:80
+	\<VirtualHost *:80>
     ServerName www.example.com
     ServerAlias example.com 
     DocumentRoot "/www/domain"
