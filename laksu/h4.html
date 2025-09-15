@@ -11,9 +11,28 @@
 <div class="row">
 	<div class="main">
 
-<p>a)</p>
-
-<p>Lähteet:</p>
+<p>x)</p>
+<p>a) Pilvipalvelimen vuokraus ja asennus</p>
+<p>- Valitse esim. DigitalOcean, Kamatera tai Vultr joista vuokrata VPS.</p>
+<p>- Luo uusi käyttäjätili ja lisää luottokortti varmistaaksesi ettet ole botti.</p>
+<p>- Valitse virtuaalipalvelimen käyttöjärjestelmä ynnä muu.</p>
+<p>- Hanki domain-nimi esimerkiksi NameCheapistä.</p>
+<p>d) Palvelin suojaan palomuurilla</p>
+<p>- Ota ssh:lla yhteys virtuaalipalvelimeen.</p>
+<p>- Asenna ufw komennolla sudo apt-get install ufw</p>
+<p>- Tee palomuuriin reikä komennolla sudo ufw allow 22/tcp</p>
+<p>- Laita palomuuri päälle komennolla sudo ufw enable</p>
+<p>e) Kotisivut palvelimelle</p>
+<p>- Asenna apache komennolla sudo apt-get install apache2</p>
+<p>- Testaa onko apache käynnissä komennolla sudo systemctl status apache2</p>
+<p>- Tee reikä palomuuriin komennolla sudo ufw allow 80/tcp</p>
+<p>Korvaa defaulttisivu komennolla echo Hello world! |sudo tee /var/www/html/index.html</p>
+<p>f) Palvelimen ohjelmien päivitys</p>
+<p>- sudo apt-get update</p>
+<p>- sudo apt-get upgrade</p>
+<p>- sudo apt-get dist-upgrade</p>
+<p>Lähde:</p>
+<p>Lehto, Susanna 2022 Teoriasta käytäntöön pilvipalvelimen avulla https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/</p>
 <p></p>
 <p></p>
 	</div>
