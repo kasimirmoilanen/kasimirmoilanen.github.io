@@ -17,12 +17,12 @@ Kun client on autorisoitu, sertifikaattien kontrolloiminen on helppoa avainparil
 <p class="code">
 LoadModule ssl_module modules/mod_ssl.so<br>
 Listen 443<br>
-<VirtualHost *:443><br>
+&lt;VirtualHost *:443&gt;<br>
     ServerName www.example.com<br>
     SSLEngine on<br>
     SSLCertificateFile "/path/to/www.example.com.cert"<br>
     SSLCertificateKeyFile "/path/to/www.example.com.key"<br>
-</VirtualHost><br>
+&lt;/VirtualHost&gt;<br>
 </p>
 <p></p>
 <p>Asensin certbotin:</p>
@@ -37,6 +37,12 @@ Listen 443<br>
 <img src="../Images/2025-09-30-012716_1366x768_scrot.png"></img>
 <img src="../Images/2025-09-30-012752_1366x768_scrot.png"></img>
 
+
+		
+<p>Lähteet:</p>
+<p>Let's Encrypt, How it works? https://letsencrypt.org/how-it-works/</p>	
+<p>Apache documentation, SSL/TLS Strong Encryption: How-To, https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html#configexample</p>	
+	
 	</div>
 	
 </div>
