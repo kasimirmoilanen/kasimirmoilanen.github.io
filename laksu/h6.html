@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Kasimir's page</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+</header>
+<div class="row">
+	<div class="main">
+<p>Let's Encryptin ja ACME-protokollan tavoite on automatisoida HTTPS-serverin ja sertifikaattien asettaminen.</p>
+<p>Let's Encrypt tunnistaa ACME-clientin julkisella avaimella. Ensimmäisellä kerralla ACME-client generoi uuden avainparin ja todentaa Let's Encryptille kontrolloivansa domainia.
+Kun client on autorisoitu, sertifikaattien kontrolloiminen on helppoa avainparilla autorisoiduilla viesteillä.</p>
+<p>SSL-konfigurointi Apachessa (ymmärtääkseni tämänkin voi automatisoida kun käyttää certbotia):</p>
+<p class="code">
+LoadModule ssl_module modules/mod_ssl.so
+Listen 443
+<VirtualHost *:443>
+    ServerName www.example.com
+    SSLEngine on
+    SSLCertificateFile "/path/to/www.example.com.cert"
+    SSLCertificateKeyFile "/path/to/www.example.com.key"
+</VirtualHost>
+</p>
+<p></p>
+<p>Asensin certbotin:</p>
+<p class="code">sudo apt-get install certbot</p>
+<p>Ajoin certbotin:</p>
+<p class="code">sudo certbot --apache --domains kasimirmoilanen.com,www.kasimirmoilanen.com</p>
+<img src="../Images/2025-09-24-200406_1366x768_scrot.png"></img>
+<p>HTTPS-sivu lähti toimimaan:</p>
+<img src="../Images/2025-09-24-202300_1366x768_scrot.png"></img>
+
+<p>Lopuksi testailin SSLLabsia, kaikki näytti olevan kunnossa:</p>    
+<img src="../Images/2025-09-30-012716_1366x768_scrot.png"></img>
+<img src="../Images/2025-09-30-012752_1366x768_scrot.png"></img>
+
+	</div>
+	
+</div>
+</body>
+</html>
