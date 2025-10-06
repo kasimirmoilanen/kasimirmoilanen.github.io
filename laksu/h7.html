@@ -72,6 +72,11 @@ pwd<br>
 <p>Apachen default-sivu tuli myös näkyviin localhostissa:</p>
 <img src="../Images/2025-10-06-213846_1366x768_scrot.png"></img>
 
+<p>Minulla oli hieman vaikeuksia ymmärtää mikä olisi paras tapa mahdollistaa apache-sivun muokkaaminen ilman sudoa.</p>
+<p>Päätin lopulta tutkittuani yrittää vaihtaa /var/www/html/ -hakemiston omistajaksi oman käyttäjäni:</p>
+<p class=code>sudo chown kasimir /var/www/html</p>
+<img src="../Images/2025-10-06-215933_1366x768_scrot.png"></img>
+<p>Sain toivotun tuloksen ja onnistuin muokkaamaan sivustoa ilman sudoa.</p>
 
 
 <p>Lähteet:</p>
@@ -79,7 +84,8 @@ pwd<br>
 <p>Karvinen, Tero 2024 Final lab for Linux-palvelimet Spring https://terokarvinen.com/2024/arvioitava-laboratorioharjoitus-2024-linux-palvelimet/</p>
 <p>Vultr 2024, Python Program to Print Hello world! https://docs.vultr.com/python/examples/print-hello-world</p>
 <p>Heinonen, Johanna 2025 Shell Scripting Basics https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-01102025.md/</p>	
-<p>Heinonen, Johanna 2025 Apache https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-03092025.md</p>	
+<p>Heinonen, Johanna 2025 Apache https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-03092025.md</p>
+<p>Ask Ubuntu -foorumi, https://askubuntu.com/questions/904850/changing-permissions-for-var-www-html?rq=1</p>
 	
 	</div>
 	
