@@ -47,6 +47,7 @@ Seuraavaksi loin uuden lyhyen lols-nimisen bash-scriptin joka putkittaa ls-komen
 <p>Minulle ei ollut täysin varma mitkä osat tehtävänannosta pätivät tässä tilanteessa mutta ajattelin etteivät tietyt esivalmistelut päde tässä tapauksessa.</p>
 <p>Aluksi asensin minulle mieluisimman neovim-tekstieditorin helpottaakseni työskentelyäni:</p>
 <p class=code>sudo apt-get install neovim</p>
+<h1>Howdy</h1>
 <p>Otin tekstieditorin käyttöön:</p>
 <p class=code>nvim howdy</p>
 <p>Kirjoitin lyhyen scriptin joka printtaa ajan ja käyttäjän nykyisen hakemiston:</p>
@@ -57,14 +58,27 @@ pwd<br>
 <p>Annoin scriptin ajamiseen oikeudet ja kopioin sen /usr/local/bin -hakemistoon:</p>
 <p class=code>sudo chmod a+x howdy</p>
 <p class=code>sudo cp howdy /usr/local/bin/</p>
-<p>Kokeilin ajaa eri lokaatioissa howdy -komennon ja se toimi! Kello oli 21:28</p>
-		
+<p>Testasin ajaa eri lokaatioissa howdy -komennon sekä omalla että root-käyttäjällä ja se toimi! Kello oli 21:28</p>
+
+<h1>Apache</h1>
+
+<p>Asensin Apache-webpalvelimen komennolla</p>
+<p class=code>sudo apt-get install apache2</p>
+<p>Testasin lähtikö apache2 käyntiin komennolla:</p>
+<p class=code>sudo systemctl status apache2</p>
+<p>Apache2 oli aktiivinen.</p>
+<img src="../Images/2025-10-06-213453_1366x768_scrot.png"></img>
+<p>Apachen default-sivu tuli myös näkyviin localhostissa:</p>
+<img src="../Images/2025-10-06-213846_1366x768_scrot.png"></img>
+
+
+
 <p>Lähteet:</p>
 <p>Karvinen, Tero 2025 Tehtävänanto h7 https://terokarvinen.com/linux-palvelimet/</p>
 <p>Karvinen, Tero 2024 Final lab for Linux-palvelimet Spring https://terokarvinen.com/2024/arvioitava-laboratorioharjoitus-2024-linux-palvelimet/</p>
 <p>Vultr 2024, Python Program to Print Hello world! https://docs.vultr.com/python/examples/print-hello-world</p>
 <p>Heinonen, Johanna 2025 Shell Scripting Basics https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-01102025.md/</p>	
-<p></p>	
+<p>Heinonen, Johanna 2025 Apache https://github.com/johannaheinonen/johanna-test-repo/blob/main/linux-03092025.md</p>	
 	
 	</div>
 	
