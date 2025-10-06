@@ -76,12 +76,22 @@ pwd<br>
 <p>Päätin lopulta tutkittuani yrittää vaihtaa /var/www/html/ -hakemiston omistajaksi oman käyttäjäni:</p>
 <p class=code>sudo chown kasimir /var/www/html</p>
 <img src="../Images/2025-10-06-215933_1366x768_scrot.png"></img>
-<p>Sain toivotun tuloksen ja onnistuin muokkaamaan sivustoa ilman sudoa.</p>
+<p>Luulin saaneeni toivotun tuloksen ja onnistuneeni muokkaamaan sivustoa ilman sudoa.</p>
+<p>Minä olin kuitenkin root -käyttäjällä kun tein tämän, hups!</p>
+<p>En siis saanut sivustoa muokattua ilman pääkäyttäjää.</p>
+<p>Korjasin kuitenkin asian muuttamalla tiedoston index.html -oikeuksia:</p>
+<p class="code">chmod 755 -R /var/www/html</p>
+<p>Testasin muokata tiedostoa index.html -tiedostoa uudestaan käyttäjälläni ja se toimi.</p>
 <p>Tarkistin virtuaalikoneeni paikallisen IP-osoitteen komennolla ip addr</p>
-<p>Sivu tuli myöskin näkyviin testaamalla IP-osoitteella.</p> 
-		
+<p>Sivu tuli myöskin näkyviin testaamalla IP-osoitteella. Kello oli 22:03</p> 
 <img src="../Images/2025-10-06-220352_1366x768_scrot.png"></img>
-		
+<h1>SSH</h1>
+<p>Asensin SSH-palvelimen komennolla:</p>
+<p class="code">sudo apt-get install openssh-server</p>
+<p>Testasin käynnistyikö palvelu komennolla:</p>
+<p class="code">sudo systemctl status ssh</p>
+<p>SSH oli aktiivinen. Kello oli 22:25</p>
+<p>Tässä vaiheessa aikani ja jaksamiseni tulivat vastaan ja päätin taputella homman tähän.</p>
 
 <p>Lähteet:</p>
 <p>Karvinen, Tero 2025 Tehtävänanto h7 https://terokarvinen.com/linux-palvelimet/</p>
