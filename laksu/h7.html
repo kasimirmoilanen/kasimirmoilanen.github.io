@@ -31,6 +31,17 @@ print("Hello world!")
 </p>
 Testasin että kaikki toimivat:
 <img src="../Images/2025-10-06-205157_1366x768_scrot.png"></img>
+
+Seuraavaksi loin uuden lyhyen lols-nimisen bash-scriptin joka putkittaa ls-komennon lolcat-nimiseen ohjelmaan:
+<p class=code>ls | lolcat</p>
+<p>Annoin oikeudet ajaa ohjelmaa komennolla:</p>
+<p class=code>chmod a+x lols</p>
+<p>Kopioin scriptin /usr/local/bin -hakemistoon jotta sen voisi ajaa missä tahansa sijainnissa:</p> 
+<p class=code>sudo cp lols /usr/local/bin/</p>
+<p>Lopuksi testasin ajaa lols kotihakemistossani:</p>
+<p class=code>lols</p>
+<img src="../Images/2025-10-06-205946_1366x768_scrot.png"></img>
+<p>Toimi!</p>
 <p>If you create a script that everybody should be able to run copy it to /usr/local/bin/</p>
 
 
